@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            let cnt=0
+            let minCnt=0
+            let intervalId
+            function start()
+            {
+                
+                intervalId = setInterval(()=>
+                {
+                    if(cnt>59)
+                    {
+                        minCnt++;
+                        cnt=0;
+                    }
+                    cnt++
+                    document.getElementById("show").innerHTML=`${minCnt}:${cnt}`
+                },500)
+            }
+            function stop()
+            {
+                clearInterval(intervalId)
+            }
+
+        </script>
+    </head>
+    <body>
+        
+        <input type="button" value="start" onclick="start()">
+        <br><br>
+        <p id="show">0</p>
+        <br><br>
+        <input type="button" value="Stop"   onclick="stop()">
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>   
+            let arr = [20,10,30]
+            function add()
+            {
+                let ele = document.getElementById("n1").value
+                arr.push(ele)
+                document.getElementById("display").innerHTML=`${arr}`
+            }
+            function sort(sel)
+            {
+                if(sel=="asc")
+                {
+                    arr.sort()
+                    document.getElementById("display").innerHTML=`${arr}`
+                }
+                else
+                {
+                    arr.sort()
+                    arr.reverse()
+                    document.getElementById("display").innerHTML=`${arr}`
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <input type="number" onblur="add()" id="n1">
+        ASC : <input type="radio"  value="asc" name="sorting" onchange="sort(value)">
+        DESC : <input type="radio"  value="desc" name="sorting" onchange="sort(value)">
+        <p id="display"></p>
+
+    </body>
+</html>
